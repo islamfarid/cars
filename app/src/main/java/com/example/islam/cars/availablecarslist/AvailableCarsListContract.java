@@ -1,4 +1,4 @@
-package com.example.islam.cars.realestaeslist;
+package com.example.islam.cars.availablecarslist;
 
 
 import com.example.islam.cars.BasePresenter;
@@ -13,7 +13,7 @@ import java.util.List;
 
 public interface AvailableCarsListContract {
     interface View extends BaseView<Presenter> {
-        void showAllAvailableCars(List<PlacemarksItem> realEstates);
+        void showAllAvailableCars(List<PlacemarksItem> placemarksItems);
 
         void showLoading();
 
@@ -23,6 +23,6 @@ public interface AvailableCarsListContract {
     }
 
     interface Presenter extends BasePresenter {
-        void getAllRealEstates();
+        void getAllAvaialableCars();
     }
 }

@@ -9,7 +9,6 @@ import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
 
-
 public class CarsApplication extends Application {
 
     private CarsRepositoryComponent mCarsRepositoryComponent;

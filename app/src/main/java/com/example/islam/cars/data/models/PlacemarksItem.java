@@ -1,95 +1,136 @@
 package com.example.islam.cars.data.models;
 
-import java.util.List;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class PlacemarksItem{
+import java.util.ArrayList;
+import java.util.List;
 
-	@SerializedName("address")
-	private String address;
+public class PlacemarksItem implements Parcelable {
 
-	@SerializedName("fuel")
-	private int fuel;
+    public static final Parcelable.Creator<PlacemarksItem> CREATOR = new Parcelable.Creator<PlacemarksItem>() {
+        @Override
+        public PlacemarksItem createFromParcel(Parcel source) {
+            return new PlacemarksItem(source);
+        }
 
-	@SerializedName("exterior")
-	private String exterior;
+        @Override
+        public PlacemarksItem[] newArray(int size) {
+            return new PlacemarksItem[size];
+        }
+    };
+    @SerializedName("address")
+    private String address;
+    @SerializedName("fuel")
+    private int fuel;
+    @SerializedName("exterior")
+    private String exterior;
+    @SerializedName("coordinates")
+    private List<Double> coordinates;
+    @SerializedName("name")
+    private String name;
+    @SerializedName("engineType")
+    private String engineType;
+    @SerializedName("vin")
+    private String vin;
+    @SerializedName("interior")
+    private String interior;
 
-	@SerializedName("coordinates")
-	private List<Double> coordinates;
+    public PlacemarksItem() {
+    }
 
-	@SerializedName("name")
-	private String name;
+    protected PlacemarksItem(Parcel in) {
+        this.address = in.readString();
+        this.fuel = in.readInt();
+        this.exterior = in.readString();
+        this.coordinates = new ArrayList<Double>();
+        in.readList(this.coordinates, Double.class.getClassLoader());
+        this.name = in.readString();
+        this.engineType = in.readString();
+        this.vin = in.readString();
+        this.interior = in.readString();
+    }
 
-	@SerializedName("engineType")
-	private String engineType;
+    public String getAddress() {
+        return address;
+    }
 
-	@SerializedName("vin")
-	private String vin;
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	@SerializedName("interior")
-	private String interior;
+    public int getFuel() {
+        return fuel;
+    }
 
-	public void setAddress(String address){
-		this.address = address;
-	}
+    public void setFuel(int fuel) {
+        this.fuel = fuel;
+    }
 
-	public String getAddress(){
-		return address;
-	}
+    public String getExterior() {
+        return exterior;
+    }
 
-	public void setFuel(int fuel){
-		this.fuel = fuel;
-	}
+    public void setExterior(String exterior) {
+        this.exterior = exterior;
+    }
 
-	public int getFuel(){
-		return fuel;
-	}
+    public List<Double> getCoordinates() {
+        return coordinates;
+    }
 
-	public void setExterior(String exterior){
-		this.exterior = exterior;
-	}
+    public void setCoordinates(List<Double> coordinates) {
+        this.coordinates = coordinates;
+    }
 
-	public String getExterior(){
-		return exterior;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setCoordinates(List<Double> coordinates){
-		this.coordinates = coordinates;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public List<Double> getCoordinates(){
-		return coordinates;
-	}
+    public String getEngineType() {
+        return engineType;
+    }
 
-	public void setName(String name){
-		this.name = name;
-	}
+    public void setEngineType(String engineType) {
+        this.engineType = engineType;
+    }
 
-	public String getName(){
-		return name;
-	}
+    public String getVin() {
+        return vin;
+    }
 
-	public void setEngineType(String engineType){
-		this.engineType = engineType;
-	}
+    public void setVin(String vin) {
+        this.vin = vin;
+    }
 
-	public String getEngineType(){
-		return engineType;
-	}
+    public String getInterior() {
+        return interior;
+    }
 
-	public void setVin(String vin){
-		this.vin = vin;
-	}
+    public void setInterior(String interior) {
+        this.interior = interior;
+    }
 
-	public String getVin(){
-		return vin;
-	}
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
-	public void setInterior(String interior){
-		this.interior = interior;
-	}
-
-	public String getInterior(){
-		return interior;
-	}
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.address);
+        dest.writeInt(this.fuel);
+        dest.writeString(this.exterior);
+        dest.writeList(this.coordinates);
+        dest.writeString(this.name);
+        dest.writeString(this.engineType);
+        dest.writeString(this.vin);
+        dest.writeString(this.interior);
+    }
 }

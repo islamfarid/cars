@@ -1,7 +1,6 @@
 package com.example.islam.cars.data;
 
 
-
 import com.example.islam.cars.data.models.AvailableCarsResponseModel;
 
 import io.reactivex.Observable;

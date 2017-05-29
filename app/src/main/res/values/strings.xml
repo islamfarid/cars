@@ -3,4 +3,12 @@
     <string name="address">Address</string>
     <string name="fuel">Fuel</string>
     <string name="exterior">Exterior</string>
+    <string name="engineType">Engine Type</string>
+    <string name="vin">Vin</string>
+    <string name="interior">Interior</string>
+    <string name="error_no_available_cars_to_show">No available cars to show</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+AIzaSyBLBfG4mkx0bZIt3qFrHSbqBmBWlFXhS2E    </string>
+    <string name="error_location_permission_is_needed">Location permission is needed</string>
+    <string name="map">map</string>
 </resources>

@@ -5,8 +5,8 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         android:src="@drawable/car_logo" />
 </LinearLayout>

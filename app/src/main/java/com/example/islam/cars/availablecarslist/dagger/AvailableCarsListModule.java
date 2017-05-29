@@ -1,8 +1,7 @@
-package com.example.islam.cars.realestaeslist.dagger;
+package com.example.islam.cars.availablecarslist.dagger;
 
 
-
-import com.example.islam.cars.realestaeslist.AvailableCarsListContract;
+import com.example.islam.cars.availablecarslist.AvailableCarsListContract;
 
 import dagger.Module;
 import dagger.Provides;

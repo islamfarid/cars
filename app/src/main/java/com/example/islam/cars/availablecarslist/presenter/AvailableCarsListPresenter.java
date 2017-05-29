@@ -1,7 +1,7 @@
-package com.example.islam.cars.realestaeslist.presenter;
+package com.example.islam.cars.availablecarslist.presenter;
 
-import com.example.islam.cars.realestaeslist.AvailableCarsListContract;
-import com.example.islam.cars.realestaeslist.business.AvailableCarsListBusiness;
+import com.example.islam.cars.availablecarslist.AvailableCarsListContract;
+import com.example.islam.cars.availablecarslist.business.AvailableCarsListBusiness;
 import com.example.islam.cars.utils.EspressoIdlingResource;
 
 import javax.inject.Inject;
@@ -42,17 +42,17 @@ public class AvailableCarsListPresenter implements AvailableCarsListContract.Pre
     }
 
     @Override
-    public void getAllRealEstates() {
+    public void getAllAvaialableCars() {
         mView.showLoading();
         EspressoIdlingResource.increment();
-        mSubscriptions.add(mAvailableCarsListBusiness.getAllRealEstates().observeOn(AndroidSchedulers.
+        mSubscriptions.add(mAvailableCarsListBusiness.getAllAvailableCars().observeOn(AndroidSchedulers.
                 mainThread()).subscribeOn(Schedulers.io()).doOnTerminate(() -> {
             if (!EspressoIdlingResource.getIdlingResource().isIdleNow()) {
                 EspressoIdlingResource.decrement(); // Set app as idle.
             }
-        }).subscribe((realEstatesItems) -> {
+        }).subscribe((placemarksItems) -> {
             mView.hideLoading();
-            mView.showAllAvailableCars(realEstatesItems);
+            mView.showAllAvailableCars(placemarksItems);
         }, throwable -> {
             mView.hideLoading();
             mView.showErrorMessage(throwable.getMessage());

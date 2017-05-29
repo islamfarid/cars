@@ -1,4 +1,4 @@
-package com.example.islam.cars.realestaeslist.business;
+package com.example.islam.cars.availablecarslist.business;
 
 
 import com.example.islam.cars.data.CarsRepository;
@@ -29,7 +29,7 @@ public class AvailableCarsListBusiness {
         this.carsRepository = carsRepository;
     }
 
-    public Observable<List<PlacemarksItem>> getAllRealEstates() {
+    public Observable<List<PlacemarksItem>> getAllAvailableCars() {
         return carsRepository.getAllAvailableCars().map(
                 AvailableCarsResponseModel::getPlacemarks);
     }

@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 
 import com.example.islam.cars.BaseActivity;
 import com.example.islam.cars.R;
-import com.example.islam.cars.realestaeslist.view.AvailableCarsListActivity;
+import com.example.islam.cars.availablecarslist.view.AvailableCarsListActivity;
 
 
 /**
